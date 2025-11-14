@@ -1,333 +1,184 @@
-/* ======================================================
- FILE: styles.css
- Modern RTL design - Professional Polish
-====================================================== */
-
 /* --- 1. إعدادات أساسية وثيم الألوان --- */
-:root{
-  --color-primary: #1e88ff;       /* أزرق زاهي */
-  --color-accent: #6ea8fe;
-  --bg-very-dark: #0b0f12;     /* أكثر قتامة لمزيد من التباين */
-  --bg-dark: #0f1417;
-  /* --card-bg: rgba(255,255,255,0.04); -- (ملغى، سنستخدم شفافية أعلى) */
-  --glass-bg: rgba(255, 255, 255, 0.05); /* خلفية زجاجية */
-  --glass-border: rgba(255, 255, 255, 0.1);  /* حدود زجاجية */
-  --muted: #bfc9d9;
-  --text: #ffffff;
-  --success: #2ecc71;
-  --danger: #ff6b6b;
-  --radius: 16px; /* زيادة الانحناء قليلاً */
-  --font-family: "Cairo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+:root {
+    --color-primary: #0077F7; /* اللون الأزرق الأساسي من التطبيق */
+    --color-dark-bg: #121212;  /* خلفية داكنة جداً */
+    --color-light-bg: #1E1E1E; /* خلفية الكروت (أفتح) */
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #B0B0B0;
+    --font-family: 'Cairo', sans-serif;
 }
 
-/* Base */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  padding-top: 80px; /* إضافة مساحة للشريط العلوي الثابت */
-  font-family:var(--font-family);
-  background-color: var(--bg-very-dark);
-  /* خلفية مُحسّنة: 
-    إضاءة أكبر وأكثر انتشاراً خلف المحتوى لتعزيز التأثير الزجاجي
-  */
-  background-image:
-    radial-gradient(ellipse at 70% 20%, rgba(30,136,255,0.15), transparent 40%),
-    radial-gradient(ellipse at 30% 80%, rgba(110,168,254,0.1), transparent 50%);
-  background-attachment: fixed; /* تثبيت الخلفية */
-  color:var(--text);
-  line-height:1.7; /* تحسين قابلية القراءة */
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    text-align: right;
 }
 
-/* Page container */
-.page{
-  max-width:1100px;
-  margin: 0 auto; /* تم إلغاء الهامش العلوي لأن body.padding-top تكفلت به */
-  padding: 24px;
+section {
+    padding: 40px 20px;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
-/* --- 2. الهيدر (الشريط العلوي) المُحسّن --- */
-.site-header{
-  /* تثبيت الشريط في الأعلى */
-  position: sticky;
-  top: 16px; /* مسافة من أعلى الشاشة */
-  left: 0;
-  right: 0;
-  z-index: 100;
-  
-  /* تحديد العرض الأقصى ومحاذاة للمركز (مثل .page) */
-  max-width: 1140px; 
-  margin: 0 auto 16px auto;
-  padding: 0 16px;
+h1, h2, h3 {
+    font-weight: 700;
+    text-align: center;
 }
 
-.header-inner{
-  display:flex;
-  gap:18px;
-  align-items:center;
-  justify-content: space-between; /* توزيع العناصر */
-  flex-wrap:wrap;
-  
-  /* التأثير الزجاجي */
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  
-  padding: 12px 20px;
-  border-radius: var(--radius);
-  box-shadow: 0 8px 32px rgba(2,6,23,0.3);
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    font-weight: 900;
+    color: var(--color-primary);
 }
 
-.logo-wrap {
-  display: flex;
-  gap: 16px;
-  align-items: center;
+p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
 }
 
-.logo{
-  width: 64px; /* تصغير اللوجو ليتناسب مع الشريط */
-  height: 64px;
-  border-radius: 12px;
-  object-fit:cover;
-  border:1px solid rgba(255,255,255,0.08);
+/* --- 2. تصميم الرأسية (Header) --- */
+header {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
 }
-.title-wrap{text-align:right}
-.app-title{font-size:1.5rem; margin:0; letter-spacing:0.6px; font-weight: 800;}
-.subtitle{margin:0; color:var(--muted); font-weight:400; font-size: 0.9rem;}
-
-/* زر التحميل في الهيدر */
-.nav-download {
-  background: var(--color-primary);
-  color: #fff;
-  padding: 8px 20px;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background .2s ease, transform .2s ease;
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 119, 247, 0.3);
 }
-.nav-download:hover {
-  background: var(--color-accent);
-  transform: scale(1.05);
+header h1 {
+    font-size: 3rem;
+    margin: 10px 0 0 0;
+    color: var(--color-text-primary);
 }
 
+/* --- 3. قسم الترحيب والتحميل (Hero) --- */
+.hero {
+    text-align: center;
+}
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--color-text-primary);
+}
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 119, 247, 0.4);
+}
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 119, 247, 0.6);
+}
 
-/* --- 3. البطاقات والعناصر الأساسية (التأثير الزجاجي) --- */
+/* --- 4. لقطات الشاشة --- */
+.screenshots-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* للالتفاف على الشاشات الصغيرة */
+}
+.screenshots-grid img {
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+.screenshots-grid img:hover {
+    transform: scale(1.05);
+}
 
-/* أساس البطاقة الزجاجية */
-.hero-card,
-.screenshots-grid figure,
-.feature-item,
+/* --- 5. الميزات --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* عمودين */
+    gap: 30px;
+}
+.feature-item {
+    background-color: var(--color-light-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.feature-item svg {
+    width: 48px;
+    height: 48px;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+.feature-item h3 {
+    font-size: 1.5rem;
+    text-align: right;
+    margin-bottom: 10px;
+}
+.feature-item p {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- 6. الخصوصية --- */
+.privacy {
+    text-align: center;
+}
 .privacy-box {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius);
-  box-shadow: 0 10px 40px rgba(2,6,23,0.4);
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    background-color: rgba(0, 119, 247, 0.05); /* خلفية زرقاء شفافة */
+    border: 1px solid var(--color-primary);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
 }
-
-/* Hero */
-.hero{margin-top:20px}
-.hero-card{
-  padding: 32px;
-  display:grid;
-  gap: 20px; /* زيادة التباعد */
-  place-items:center;
-  text-align:center;
-}
-.hero-card h2{
-  font-size: 2.2rem; /* تكبير العنوان الرئيسي */
-  color:var(--text);
-  margin:0;
-  font-weight: 800;
-}
-.hero-card p{
-  max-width:760px;
-  color:var(--muted);
-  margin:0 0 8px 0;
-  font-size: 1.1rem;
-}
-
-/* CTA */
-.cta-button{
-  display:inline-block;
-  background: linear-gradient(90deg,var(--color-primary), var(--color-accent));
-  color: #fff;
-  padding: 14px 32px; /* زر أكبر وأوضح */
-  border-radius:999px;
-  font-weight:700;
-  text-decoration:none;
-  font-size: 1.05rem;
-  letter-spacing: 0.5px; /* تباعد أحرف احترافي */
-  box-shadow: 0 8px 30px rgba(30,136,255,0.22);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.cta-button:focus-visible { /* تحسين الوضوح عند التنقل بالكيبورد */
-  outline: 3px solid var(--color-accent);
-  outline-offset: 4px;
-}
-.cta-button:hover{
-  transform:translateY(-4px) scale(1.02);
-  box-shadow:0 16px 44px rgba(30,136,255,0.3);
-}
-
-/* mini badges under CTA */
-.mini-badges{display:flex;gap:12px;padding:0;margin:8px 0 0 0;list-style:none}
-.mini-badges li{
-  background: rgba(255,255,255, 0.08); /* أوضح قليلاً */
-  padding:6px 12px;
-  border-radius:999px;
-  font-size:0.92rem;
-  color:var(--muted);
-  font-weight: 600;
-}
-
-/* --- 4. الأقسام (لقطات، ميزات) --- */
-.screenshots, .features, .privacy {
-  margin-top: 64px; /* زيادة التباعد بين الأقسام */
-}
-
-/* عناوين الأقسام */
-.screenshots h2, .features h2, .privacy h2 {
-  text-align:center;
-  color:var(--color-primary);
-  margin-bottom: 32px;
-  font-size: 1.8rem;
-  font-weight: 800;
-}
-
-/* Screenshots */
-.screenshots-grid{
-  display:flex;
-  gap: 24px; /* زيادة التباعد */
-  justify-content:center;
-  flex-wrap:wrap
-}
-.screenshots-grid figure{
-  width:min(320px, 100%); /* تحديد عرض أكبر قليلاً */
-  margin:0;
-  padding: 12px;
-  display:flex;flex-direction:column;
-  align-items:center;
-}
-.screenshots-grid img{
-  width:100%;
-  height: auto; /* الحفاظ على نسبة الصورة */
-  aspect-ratio: 9 / 16; /* نسبة شاشة هاتف عمودية */
-  object-fit:cover;
-  border-radius:10px;
-  display:block;
-  transition:transform .25s ease;
-  border: 1px solid rgba(255,255,255,0.05);
-}
-.screenshots-grid figcaption{margin-top:12px;color:var(--muted);font-size:0.95rem; font-weight: 600;}
-.screenshots-grid figure:hover img{transform:scale(1.03)}
-
-/* Features grid */
-.features-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); /* شبكة مرنة أفضل */
-  gap: 24px;
-}
-.feature-item{
-  padding: 24px;
-  display:flex;
-  flex-direction:column; /* العودة للعمودي ليعمل على كل الأحجام */
-  text-align:right; 
-  gap: 12px;
-}
-/* تأثير احترافي عند الـ hover: 
-  تغيير لون الإطار إلى اللون الأساسي
-*/
-.feature-item:hover{
-  transform:translateY(-6px);
-  box-shadow:0 16px 40px rgba(2,6,23,0.5);
-  border-color: var(--color-primary); 
-}
-.feature-item .icon{
-  width:52px;
-  height:52px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  /* خلفية أيقونة أوضح وأكثر تميزاً 
-  */
-  background: rgba(30,136,255, 0.15);
-  border: 1px solid rgba(30, 136, 255, 0.3);
-  color:var(--color-primary);
-  flex-shrink: 0; /* منع الأيقونة من الانكماش */
-}
-.feature-item h3{margin:6px 0 4px 0;font-size:1.1rem; font-weight: 700;}
-.feature-item p{margin:0;color:var(--muted);font-size:0.98rem; line-height: 1.6;}
-
-/* Privacy box */
-.privacy-box{
-  max-width:820px;
-  margin:0 auto;
-  padding: 24px;
-  border-color: rgba(30,136,255,0.2); /* تمييز هذا الصندوق بلون أزرق خافت */
-  color:var(--muted);
-  text-align: center;
+.privacy-box p {
+    color: var(--color-text-secondary);
+    margin: 10px 0;
 }
 .privacy-box strong {
-  color: var(--color-accent);
+    color: var(--color-text-primary);
 }
 
-/* Footer */
-.site-footer{
-  margin-top: 64px;
-  padding: 32px;
-  text-align:center;
-  /* استخدام حدود علوية بدلاً من الخلفية */
-  border-top: 1px solid var(--glass-border);
+/* --- 7. التذييل --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--color-light-bg);
+    margin-top: 40px;
 }
-.contact{
-  font-size:1.3rem;
-  color:var(--color-primary);
-  font-weight:700;
-  margin:6px 0;
-  letter-spacing: 1px;
+footer .contact {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
 }
-.copyright {
-  color: var(--muted);
-  font-size: 0.9rem;
+footer .copyright {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-top: 20px;
 }
 
-/* Responsive */
-@media (max-width:900px){
-  .screenshots-grid figure{width:48%}
-}
-@media (max-width:680px){
-  body { padding-top: 70px; }
-  .page{padding:16px}
-  .header-inner{
-    justify-content:center;
-    padding: 12px;
-  }
-  .logo-wrap { justify-content: center; width: 100%;}
-  .nav-download { display: none; } /* إخفاء الزر في الهيدر على الموبايل (موجود زر CTA) */
-  .logo{width:72px;height:72px}
-  
-  .hero-card { padding: 24px; }
-  .hero-card h2{font-size:1.8rem}
-  .hero-card p { font-size: 1rem; }
-  
-  .cta-button{padding:12px 24px}
-  
-  .screenshots-grid figure{width:100%}
-  .features-grid{grid-template-columns:1fr}
+/* --- 8. تصميم متجاوب (Responsive) --- */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr; /* عمود واحد في الموبايل */
+    }
+    
+    .screenshots-grid img {
+        width: 80%; /* تكبير الصور في الموبايل */
+    }
 }
 
-/* Accessibility improvements */
-a,button{transition:all .2s ease}
-:focus-visible { /* استخدام :focus-visible أفضل من :focus */
-  outline: 3px solid var(--color-accent);
-  outline-offset: 4px;
-  border-radius: 6px;
-}
