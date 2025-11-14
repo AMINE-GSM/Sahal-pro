@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="[URL_TO_LOGO_HERE]" alt="Sahal pro Logo" width="150">
+  <img src="logo.png" alt="Sahal pro Logo" width="150">
 </p>
 
 <h1 align="center">Sahal pro</h1>
@@ -19,11 +19,11 @@
 ## 📸 لقطات من التطبيق
 
 <p align="center">
-  <img src="[URL_TO_SCREENSHOT_HOME]" width="200" alt="الواجهة الرئيسية">
+  <img src="Converting-offers.jpg" width="200" alt="الواجهة الرئيسية">
   &nbsp;&nbsp;&nbsp;
-  <img src="[URL_TO_SCREENSHOT_HISTORY]" width="200" alt="سجل العمليات">
+  <img src="Operations-log.jpg" width="200" alt="سجل العمليات">
   &nbsp;&nbsp;&nbsp;
-  <img src="[URL_TO_SCREENSHOT_P2P]" width="200" alt="واجهة تحويل الرصيد">
+  <img src="Balance-transfer.jpg" width="200" alt="واجهة تحويل الرصيد">
 </p>
 
 ## ✨ الميزات الرئيسية
