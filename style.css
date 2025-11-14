@@ -1,0 +1,183 @@
+/* --- 1. إعدادات أساسية وثيم الألوان --- */
+:root {
+    --color-primary: #0077F7; /* اللون الأزرق الأساسي من التطبيق */
+    --color-dark-bg: #121212;  /* خلفية داكنة جداً */
+    --color-light-bg: #1E1E1E; /* خلفية الكروت (أفتح) */
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #B0B0B0;
+    --font-family: 'Cairo', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    text-align: right;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    font-weight: 900;
+    color: var(--color-primary);
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- 2. تصميم الرأسية (Header) --- */
+header {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+}
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 119, 247, 0.3);
+}
+header h1 {
+    font-size: 3rem;
+    margin: 10px 0 0 0;
+    color: var(--color-text-primary);
+}
+
+/* --- 3. قسم الترحيب والتحميل (Hero) --- */
+.hero {
+    text-align: center;
+}
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--color-text-primary);
+}
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 119, 247, 0.4);
+}
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 119, 247, 0.6);
+}
+
+/* --- 4. لقطات الشاشة --- */
+.screenshots-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* للالتفاف على الشاشات الصغيرة */
+}
+.screenshots-grid img {
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+.screenshots-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* --- 5. الميزات --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* عمودين */
+    gap: 30px;
+}
+.feature-item {
+    background-color: var(--color-light-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.feature-item svg {
+    width: 48px;
+    height: 48px;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+.feature-item h3 {
+    font-size: 1.5rem;
+    text-align: right;
+    margin-bottom: 10px;
+}
+.feature-item p {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- 6. الخصوصية --- */
+.privacy {
+    text-align: center;
+}
+.privacy-box {
+    background-color: rgba(0, 119, 247, 0.05); /* خلفية زرقاء شفافة */
+    border: 1px solid var(--color-primary);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.privacy-box p {
+    color: var(--color-text-secondary);
+    margin: 10px 0;
+}
+.privacy-box strong {
+    color: var(--color-text-primary);
+}
+
+/* --- 7. التذييل --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--color-light-bg);
+    margin-top: 40px;
+}
+footer .contact {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+footer .copyright {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-top: 20px;
+}
+
+/* --- 8. تصميم متجاوب (Responsive) --- */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr; /* عمود واحد في الموبايل */
+    }
+    
+    .screenshots-grid img {
+        width: 80%; /* تكبير الصور في الموبايل */
+    }
+}
