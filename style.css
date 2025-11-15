@@ -45,6 +45,7 @@ p {
 header {
     text-align: center;
     padding: 40px 20px 20px 20px;
+    position: relative; /* <<< تعديل: لجعل التموضع المطلق للأيقونات ممكنًا */
 }
 .logo {
     width: 120px;
@@ -57,6 +58,29 @@ header h1 {
     margin: 10px 0 0 0;
     color: var(--color-text-primary);
 }
+
+/* === إضافة جديدة: تنسيق أيقونات التواصل === */
+.social-links {
+    position: absolute;
+    top: 25px;
+    left: 25px; /* (بما أن الصفحة RTL، ستظهر الأيقونات في الزاوية اليسرى) */
+    display: flex;
+    gap: 15px; /* مسافة بين الأيقونات */
+}
+.social-links a {
+    display: inline-block;
+}
+.social-links img {
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.social-links img:hover {
+    opacity: 1;
+}
+/* === نهاية الإضافة === */
+
 
 /* --- 3. قسم الترحيب والتحميل (Hero) --- */
 .hero {
@@ -180,5 +204,14 @@ footer .copyright {
     .screenshots-grid img {
         width: 80%; /* تكبير الصور في الموبايل */
     }
-}
 
+    /* === إضافة: تعديل موضع الأيقونات في الموبايل === */
+    .social-links {
+        top: 20px;
+        left: 20px;
+    }
+    .social-links img {
+        width: 28px;
+        height: 28px;
+    }
+}
