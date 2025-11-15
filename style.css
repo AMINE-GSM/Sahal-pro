@@ -45,7 +45,7 @@ p {
 header {
     text-align: center;
     padding: 40px 20px 20px 20px;
-    position: relative; /* <<< تعديل: لجعل التموضع المطلق للأيقونات ممكنًا */
+    position: relative; 
 }
 .logo {
     width: 120px;
@@ -59,13 +59,23 @@ header h1 {
     color: var(--color-text-primary);
 }
 
-/* === إضافة جديدة: تنسيق أيقونات التواصل === */
+/* === إضافة جديدة: تنسيق نص التفعيل === */
+.activation-prompt {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-top: 5px;
+    font-weight: 400; /* وزن خط عادي */
+}
+/* === نهاية الإضافة === */
+
+
+/* --- تنسيق أيقونات التواصل --- */
 .social-links {
     position: absolute;
     top: 25px;
-    left: 25px; /* (بما أن الصفحة RTL، ستظهر الأيقونات في الزاوية اليسرى) */
+    left: 25px; 
     display: flex;
-    gap: 15px; /* مسافة بين الأيقونات */
+    gap: 15px; 
 }
 .social-links a {
     display: inline-block;
@@ -79,7 +89,7 @@ header h1 {
 .social-links img:hover {
     opacity: 1;
 }
-/* === نهاية الإضافة === */
+/* --- نهاية التنسيق --- */
 
 
 /* --- 3. قسم الترحيب والتحميل (Hero) --- */
@@ -117,7 +127,7 @@ header h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* للالتفاف على الشاشات الصغيرة */
+    flex-wrap: wrap; 
 }
 .screenshots-grid img {
     width: 250px;
@@ -132,7 +142,7 @@ header h1 {
 /* --- 5. الميزات --- */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* عمودين */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 30px;
 }
 .feature-item {
@@ -162,7 +172,7 @@ header h1 {
     text-align: center;
 }
 .privacy-box {
-    background-color: rgba(0, 119, 247, 0.05); /* خلفية زرقاء شفافة */
+    background-color: rgba(0, 119, 247, 0.05); 
     border: 1px solid var(--color-primary);
     border-radius: 15px;
     padding: 20px;
@@ -198,14 +208,13 @@ footer .copyright {
 /* --- 8. تصميم متجاوب (Responsive) --- */
 @media (max-width: 768px) {
     .features-grid {
-        grid-template-columns: 1fr; /* عمود واحد في الموبايل */
+        grid-template-columns: 1fr; 
     }
     
     .screenshots-grid img {
-        width: 80%; /* تكبير الصور في الموبايل */
+        width: 80%; 
     }
 
-    /* === إضافة: تعديل موضع الأيقونات في الموبايل === */
     .social-links {
         top: 20px;
         left: 20px;
@@ -213,5 +222,10 @@ footer .copyright {
     .social-links img {
         width: 28px;
         height: 28px;
+    }
+
+    /* === إضافة: تعديل نص التفعيل للموبايل === */
+    .activation-prompt {
+        font-size: 0.9rem;
     }
 }
